@@ -20,9 +20,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var animationSpringView: SpringView!
 
-    var option = Option.getAnimationOption()
-
-    
+    var options = Option.getAnimationOption().first
 
     //MARK: - View Cycle
 
@@ -34,10 +32,22 @@ class ViewController: UIViewController {
 //MARK: - IBActions
 
     @IBAction func runButtonPressed(_ sender: SpringButton) {
-        var option = Option.getAnimationOption()
 
-        animationSpringView.force
+        guard let preset = options?.preset else { return }
+        animationSpringView.animation = preset.rawValue
 
+        guard let curve = options?.curve else { return }
+        animationSpringView.curve = curve.rawValue
+
+        guard let force = options?.force else { return }
+        animationSpringView.force = force
+
+        guard let duration = options?.duration else { return }
+        animationSpringView.duration = duration
+
+        guard let delay = options?.delay else { return }
+        animationSpringView.delay = delay
+        animationSpringView.animate()
 
     }
 }

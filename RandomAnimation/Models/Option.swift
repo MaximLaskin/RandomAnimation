@@ -32,7 +32,7 @@ extension Option {
             curves.count
         )
 
-        for index in 0...iterationCount {
+        for index in 0...iterationCount{
             let option = Option(
                 preset: presets[index],
                 curve: curves[index],
