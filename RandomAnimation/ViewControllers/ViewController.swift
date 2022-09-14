@@ -27,11 +27,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        presetLabel.text = options?.preset
 
     }
 //MARK: - IBActions
 
     @IBAction func runButtonPressed(_ sender: SpringButton) {
+
+        var options = Option.getAnimationOption().first
 
         guard let preset = options?.preset else { return }
         animationSpringView.animation = preset.rawValue

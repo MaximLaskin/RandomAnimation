@@ -27,12 +27,12 @@ extension Option {
         let durations = Double.random(in: 0...1.5)
         let delays = Double.random(in: 0...1)
 
-        let iterationCount = min(
-            presets.count,
-            curves.count
-        )
+//        let iterationCount = min(
+//            presets.count,
+//            curves.count
+//        )
 
-        for index in 0...iterationCount{
+        for index in 0...5 {
             let option = Option(
                 preset: presets[index],
                 curve: curves[index],
