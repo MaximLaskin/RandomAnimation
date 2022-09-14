@@ -32,7 +32,7 @@ extension Option {
 //            curves.count
 //        )
 
-        for index in 0...5 {
+        for index in 0...5 { // iterationCount вылетает c ошибкой "Index out of range"
             let option = Option(
                 preset: presets[index],
                 curve: curves[index],

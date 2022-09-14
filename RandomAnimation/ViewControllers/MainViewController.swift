@@ -8,7 +8,7 @@
 import UIKit
 import SpringAnimation
 
-class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     //MARK: - IBOutlets
 
@@ -27,9 +27,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        presetLabel.text = options?.preset
-
     }
+    
 //MARK: - IBActions
 
     @IBAction func runButtonPressed(_ sender: SpringButton) {
