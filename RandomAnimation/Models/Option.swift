@@ -9,8 +9,8 @@ import Foundation
 import SpringAnimation
 
 struct Option {
-    let preset: AnimationPreset
-    let curve: AnimationCurve
+    let preset: String
+    let curve: String
     let force: Double
     let duration: Double
     let delay: Double
@@ -27,22 +27,21 @@ extension Option {
         let durations = Double.random(in: 0...1.5)
         let delays = Double.random(in: 0...1)
 
-//        let iterationCount = min(
-//            presets.count,
-//            curves.count
-//        )
+        let iterationCount = min(
+            presets.count,
+            curves.count
+        )
 
-        for index in 0...5 { // iterationCount вылетает c ошибкой "Index out of range"
+        for index in 0..<iterationCount {
             let option = Option(
-                preset: presets[index],
-                curve: curves[index],
+                preset: presets[index].rawValue,
+                curve: curves[index].rawValue,
                 force: forces,
                 duration: durations,
                 delay: delays
             )
             options.append(option)
         }
-
         return options
     }
 }

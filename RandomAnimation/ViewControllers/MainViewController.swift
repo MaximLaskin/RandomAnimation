@@ -20,7 +20,6 @@ final class MainViewController: UIViewController {
 
     @IBOutlet weak var animationSpringView: SpringView!
 
-    var options = Option.getAnimationOption().first
 
     //MARK: - View Cycle
 
@@ -35,8 +34,8 @@ final class MainViewController: UIViewController {
 
         var options = Option.getAnimationOption().first
 
-        guard let preset = options?.preset else { return }
-        animationSpringView.animation = preset.rawValue
+
+        animationSpringView.animation = options?.preset ?? "pop"
 
         guard let curve = options?.curve else { return }
         animationSpringView.curve = curve.rawValue
